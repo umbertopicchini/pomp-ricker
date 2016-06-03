@@ -1,5 +1,10 @@
 # Particle marginal estimation of a stochastic Ricker model.
 # Umberto Picchini, 2016
+# www.maths.lth.se/matstat/staff/umberto/
+
+# We show that, unless the particle MCMC algorithm is correctly initialised with a good starting value
+# for the parameter r, the algorithm fails. Compare with pomp_ricker-synlik.R where the synthetic likelihoods
+# algorithm is able to approach true value for r even when the starting value is far from the  true one.
 
 # This script assumes that the R "pomp" package is already installed.
 # For efficiency some construct require compilation.
@@ -97,3 +102,12 @@ pmcmc2<-pmcmc(newobservedricker, start = thetastart,
 # plot essential results
 plot(pmcmc2)  # the algorithm fails in sampling the posterior of r
 
+# Finally let's see what happens if we start at a better value for r
+thetastart2 <- c(r=exp(3.5) , sigma=0.01, phi=10,N.0=7,e.0=0)
+# set the seed for pseudo-random numbers (for reproducibility)
+set.seed(635363)
+# use pmcmc to estimate r 
+pmcmc3<-pmcmc(newobservedricker, start = thetastart2,
+              Nmcmc = 2000, Np = 1000, max.fail = Inf,
+              proposal=mvn.diag.rw(c(r = 2)))
+plot(pmcmc3)  # ok if we start at a value close to the true one the chain converges
