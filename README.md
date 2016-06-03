@@ -6,7 +6,9 @@ At the moment provided scripts are:
 - pomp_ricker-synlik producing approximate maximum likelihood estimation using Wood's 2010 synthetic likelihoods.
 - pomp_ricker-iteratedfiltering producing approximate maximum likelihood estimation using the improved iterated filtering method of  Ionides et al. 2015
 
-These files have been inspired by codes (or codes snippets) available on the very much recommended resource https://kingaa.github.io/pomp/docs.html and the research article available at https://arxiv.org/abs/1509.00503
+The main purpose of these codes is to show that, unless the parameters starting values are correctly initialized, particle MCMC and iterated filtering may fail when the system is nearly deterministic. For the considered example the synthetic likelihoods methodology is able to converge towards the true value of the parameters even when these are badly initialized.
+
+Codes have been inspired by codes (or codes snippets) available on the very much recommended resource https://kingaa.github.io/pomp/docs.html and the research article available at https://arxiv.org/abs/1509.00503
 
 References:
 - Andrieu, C., & Roberts, G. O. (2009). The pseudo-marginal approach for efficient Monte Carlo computations. The Annals of Statistics, 697-725.
