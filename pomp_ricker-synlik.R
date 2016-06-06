@@ -1,7 +1,7 @@
 # Synthetic likelihoods estimation of a stochastic Ricker model.
 # Umberto Picchini, 2016
 
-# This script assumes that the R "pomp" package is already installed.
+# This script assumes that the R "pomp" and "synlik" packages are already installed.
 # For efficiency some construct require compilation.
 # If you are on a Windows machine you probably need to install Rtools.
 # On Mac you might need Xcode.
@@ -87,3 +87,22 @@ summary.guess2 <- probe(newobservedricker, params = thetastart, probes = plist2,
 synlikresult2 <- probe.match(summary.guess2, est = c("r", "sigma", "phi"), transform = TRUE,
                             method = "Nelder-Mead", maxit = 10000, seed = 1066L, reltol = 1e-08)
 summary(synlikresult2)
+
+#load the synlik packages to verify gaussianity of summary statistics at some parameter values
+library(synlik)
+ricker_sl <- synlik(simulator = rickerSimul,
+                    summaries = rickerStats,
+                    param = c( logR = 3.8, logSigma = log(0.3), logPhi = log(10) ),
+                    extraArgs = list("nObs" = 50, "nBurn" = 50)
+)
+#Now we are ready to simulate a dataset from the object:
+ricker_sl@data <- simulate(ricker_sl, nsim = 1, seed = 73691676L)
+# Store the data in the object created above 
+ricker_sl@extraArgs$obsData <- ricker_sl@data 
+# check the approximate normality of statistics or the chi-squared distribution of 
+# (s-mu)*inv_sigma*(s-mu)' which is chi-squared(d) (with degrees of freedom d=dim(sobs)).
+# See the "Checking the normality assumption and goodness of fit" in the appendix of Wood 2010 for details.
+checkNorm(ricker_sl,nsim=1000)
+
+
+
