@@ -11,6 +11,11 @@ The code pomp_ricker-synlik also loads the "synlik" package to verify distributi
 
 Our programs have been inspired by codes (or codes snippets) available on the very much recommended resource https://kingaa.github.io/pomp/docs.html, the research article available at https://arxiv.org/abs/1509.00503 and https://cran.r-project.org/web/packages/synlik/vignettes/synlik.html
 
+# Installation
+If you are on a Windows machine you probably need to install Rtools.
+- On Mac you might need Xcode.
+- On Linux you should be already good to go.
+
 References:
 - Andrieu, C., & Roberts, G. O. (2009). The pseudo-marginal approach for efficient Monte Carlo computations. The Annals of Statistics, 697-725.
 - Wood, S. N. (2010). Statistical inference for noisy nonlinear ecological dynamic systems. Nature, 466(7310), 1102-1104.
