@@ -12,7 +12,8 @@ The code pomp_ricker-synlik also loads the "synlik" package to verify distributi
 Our programs have been inspired by codes (or codes snippets) available on the very much recommended resource https://kingaa.github.io/pomp/docs.html, the research article available at https://arxiv.org/abs/1509.00503 and https://cran.r-project.org/web/packages/synlik/vignettes/synlik.html
 
 # Installation
-If you are on a Windows machine you probably need to install Rtools.
+Some constructs (Csnippets) require the ability to compile C code.
+Therefore if you are on a Windows machine you probably need to install Rtools before running the scripts.
 - On Mac you might need Xcode.
 - On Linux you should be already good to go.
 
