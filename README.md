@@ -13,7 +13,7 @@ Our programs have been inspired by codes (or codes snippets) available on the ve
 
 # Installation
 Some constructs (Csnippets) require the ability to compile C code.
-Therefore if you are on a Windows machine you probably need to install Rtools before running the scripts.
+Therefore if you are on a Windows machine you probably need to install Rtools before running the scripts or you'll get errors.
 - On Mac you might need Xcode.
 - On Linux you should be already good to go.
 
