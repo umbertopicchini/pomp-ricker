@@ -1,5 +1,5 @@
 # pomp-ricker
-Examples of how to fit a stochastic Ricker model using the R pomp package.
+Examples of how to fit a stochastic Ricker model using the R pomp package. See also my slides http://goo.gl/ypAOjs
 
 At the moment provided scripts are:
 - pomp_ricker-pmcmc producing exact Bayesian inference using particle MCMC (the particle marginal methodology of Andrieu and Roberts 2009).
