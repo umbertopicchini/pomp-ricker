@@ -9,7 +9,7 @@ At the moment provided scripts are:
 The main purpose of these codes is to show that, unless the parameters starting values are correctly initialized, particle MCMC and iterated filtering may fail when the system is nearly deterministic. For the considered example the synthetic likelihoods methodology is able to converge towards the true value of the parameters even when these are badly initialized.
 The code pomp_ricker-synlik also loads the "synlik" package to verify distributional assumptions on the summary statistics.
 
-Our programs have been inspired by codes (or codes snippets) available on the very much recommended resource https://kingaa.github.io/pomp/docs.html, the research article available at https://arxiv.org/abs/1509.00503 and https://cran.r-project.org/web/packages/synlik/vignettes/synlik.html
+Our programs have been inspired by codes (or codes snippets) available on the very much recommended resource https://kingaa.github.io/pomp/, the research article available at https://arxiv.org/abs/1509.00503 and https://cran.r-project.org/web/packages/synlik/vignettes/synlik.html
 
 # Installation
 Some constructs (Csnippets) require the ability to compile C code.
